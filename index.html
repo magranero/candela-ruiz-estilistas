@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candela Ruiz Estilistas — Peluquería en Alcalá de Henares</title>
+    <meta name="description" content="Candela Ruiz Estilistas: tu peluquería de confianza en Alcalá de Henares. Corte, color, peinados y tratamientos capilares con los mejores profesionales.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #C2956B; --dark: #1a1a1a; --cream: #FDF8F3; --text: #444; --light: #f9f5f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; }
+
+        /* Preview Banner */
+        .preview-banner { background: linear-gradient(135deg, #E74C3C, #C0392B); color: #fff; text-align: center; padding: 14px 20px; font-size: 0.9rem; font-weight: 500; position: sticky; top: 0; z-index: 1000; }
+        .preview-banner a { color: #FFD700; text-decoration: none; font-weight: 700; }
+        .preview-banner a:hover { text-decoration: underline; }
+
+        .hero {
+            position: relative; min-height: 100vh;
+            background: linear-gradient(135deg, rgba(26,26,26,0.7), rgba(194,149,107,0.4)), url('hero.webp') center/cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+        }
+        .hero-content { max-width: 700px; padding: 0 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 700; line-height: 1.15; margin-bottom: 12px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.85); margin-bottom: 30px; letter-spacing: 1px; }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: #a87d56; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(194,149,107,0.4); }
+        .btn-outline { border: 2px solid #fff; color: #fff; margin-left: 12px; background: transparent; }
+        .btn-outline:hover { background: #fff; color: var(--dark); }
+
+        section { padding: 80px 20px; }
+        .container { max-width: 960px; margin: 0 auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; text-align: center; margin-bottom: 10px; color: var(--dark); }
+        .section-sub { text-align: center; color: #999; margin-bottom: 50px; font-size: 0.95rem; }
+
+        .google-bar { background: var(--dark); color: #fff; padding: 40px 20px; text-align: center; }
+        .google-bar .stars { font-size: 1.6rem; color: #FFD700; margin-bottom: 8px; }
+        .google-bar .rating { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; }
+        .google-bar .reviews { color: #aaa; font-size: 0.9rem; margin-top: 4px; }
+
+        .services { background: var(--cream); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .service-card { background: #fff; border-radius: 16px; padding: 35px 25px; text-align: center; transition: transform 0.3s; box-shadow: 0 2px 15px rgba(0,0,0,0.04); }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 10px; color: var(--dark); }
+        .service-card p { font-size: 0.88rem; line-height: 1.6; color: #777; }
+
+        .about { background: #fff; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-img img { width: 100%; height: 380px; object-fit: cover; border-radius: 16px; }
+        .about-text h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; color: var(--dark); }
+        .about-text p { line-height: 1.8; color: #666; margin-bottom: 12px; font-size: 0.95rem; }
+
+        .gallery { background: var(--light); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-grid img { width: 100%; height: 260px; object-fit: cover; border-radius: 12px; }
+
+        .cta-section { background: linear-gradient(135deg, var(--dark), #2a2a2a); color: #fff; text-align: center; padding: 70px 20px; }
+        .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 10px; }
+        .cta-section p { color: #aaa; margin-bottom: 25px; }
+        .cta-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        .contact { background: #fff; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-info { display: flex; flex-direction: column; gap: 20px; }
+        .contact-item { display: flex; align-items: flex-start; gap: 12px; }
+        .contact-item .icon { font-size: 1.4rem; }
+        .contact-item h4 { font-size: 0.95rem; color: var(--dark); margin-bottom: 3px; }
+        .contact-item p { font-size: 0.88rem; color: #777; }
+        .map-container { border-radius: 12px; overflow: hidden; height: 300px; }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        footer { background: var(--dark); color: #888; text-align: center; padding: 30px 20px; font-size: 0.8rem; }
+        footer a { color: var(--primary); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .btn-outline { margin-left: 0; margin-top: 10px; }
+            .hero { min-height: 90vh; }
+            .google-bar .stars { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="preview-banner">
+    ✨ Esta web es una <strong>preview gratuita</strong> para Candela Ruiz Estilistas — Válida 30 días — <strong>Solo 67&euro;/año</strong> con dominio incluido — <a href="https://wa.me/34634426565">💬 Contratar ahora</a>
+</div>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Candela Ruiz <span>Estilistas</span></h1>
+        <p>Tu peluquería de confianza en Alcalá de Henares</p>
+        <a href="tel:+34617787814" class="btn btn-primary">📞 Llámanos</a>
+        <a href="https://wa.me/34617787814" class="btn btn-outline">💬 WhatsApp</a>
+    </div>
+</section>
+
+<div class="google-bar">
+    <div class="stars">★★★★★</div>
+    <div class="rating">4.8</div>
+    <div class="reviews">185 reseñas en Google</div>
+</div>
+
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">Nuestros servicios</h2>
+        <p class="section-sub">Cuidamos de tu imagen con dedicación y profesionalidad</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Corte y estilismo</h3>
+                <p>Cortes personalizados para mujer, hombre y niños. Siempre a la última en tendencias.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Color y mechas</h3>
+                <p>Tintes, mechas, balayage y técnicas de color con productos de primera calidad.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💇</div>
+                <h3>Peinados</h3>
+                <p>Recogidos, peinados para eventos especiales, bodas y celebraciones.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💆</div>
+                <h3>Tratamientos capilares</h3>
+                <p>Hidratación, keratina, botox capilar y tratamientos reparadores para tu cabello.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👰</div>
+                <h3>Novias</h3>
+                <p>Servicio exclusivo para novias: prueba previa, peinado y maquillaje el gran día.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧴</div>
+                <h3>Asesoría de imagen</h3>
+                <p>Te aconsejamos el look perfecto según tu estilo, rostro y personalidad.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-img">
+                <img src="salon.webp" alt="Interior Candela Ruiz Estilistas" loading="lazy">
+            </div>
+            <div class="about-text">
+                <h2>Más que una peluquería</h2>
+                <p>En <strong>Candela Ruiz Estilistas</strong> llevamos años cuidando la imagen de nuestros clientes en Alcalá de Henares. Nuestro equipo de profesionales trabaja con pasión para que salgas siempre sintiéndote espectacular.</p>
+                <p>Utilizamos productos de alta gama y estamos en constante formación para ofrecerte las últimas tendencias en peluquería y estilismo.</p>
+                <p>Con una valoración de <strong>4.8 estrellas</strong> y más de <strong>185 reseñas</strong> en Google, nuestros clientes son nuestra mejor carta de presentación.</p>
+                <a href="tel:+34617787814" class="btn btn-primary" style="margin-top:15px;">Pide tu cita</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container">
+        <h2 class="section-title">Nuestro salón</h2>
+        <p class="section-sub">Un espacio pensado para tu comodidad</p>
+        <div class="gallery-grid">
+            <img src="interior.webp" alt="Salón Candela Ruiz" loading="lazy">
+            <img src="salon.webp" alt="Interior peluquería" loading="lazy">
+            <img src="hero.webp" alt="Candela Ruiz Estilistas" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>¿Lista para un cambio de look?</h2>
+    <p>Reserva tu cita y déjate mimar por nuestro equipo de profesionales</p>
+    <div class="cta-buttons">
+        <a href="tel:+34617787814" class="btn btn-primary">📞 617 78 78 14</a>
+        <a href="https://wa.me/34617787814" class="btn btn-outline">💬 WhatsApp</a>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="container">
+        <h2 class="section-title">Encuéntranos</h2>
+        <p class="section-sub">Estamos en el centro de Alcalá de Henares</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <div>
+                        <h4>Dirección</h4>
+                        <p>C. Flores, 18, 28807 Alcalá de Henares, Madrid</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <div>
+                        <h4>Teléfono</h4>
+                        <p><a href="tel:+34617787814" style="color:var(--primary);text-decoration:none;">617 78 78 14</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📱</span>
+                    <div>
+                        <h4>Facebook</h4>
+                        <p><a href="https://www.facebook.com/CandelaRuizEstilistas" target="_blank" style="color:var(--primary);text-decoration:none;">@CandelaRuizEstilistas</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.5!2d-3.3648!3d40.4818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQ2FuZGVsYSBSdWl6IEVzdGlsaXN0YXM!5e0!3m2!1ses!2ses!4v1" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Candela Ruiz Estilistas — Alcalá de Henares, Madrid</p>
+    <p style="margin-top:8px;">Web creada por <a href="https://automatizar.net" target="_blank">Automatizar.net</a></p>
+</footer>
+
+</body>
+</html>
